@@ -11,8 +11,8 @@ counter=0
 while [ $counter -lt 3 ];do
 let uidx=counter+1
 let pidx=uidx/2
-url="http://shenchen.me:8999/fetch?"${JOBS[$uidx]}
-#echo $url
+url="http://shenchen.me:8999/fetch?url="${JOBS[$uidx]}
+echo $url
 response=$(curl $url) >> /dev/null
 if [ "${pre_resp[$pidx]}" != "$response" ]; then
 echo ${JOBS[$counter]}  "changed:${pre_resp[$pidx]}" "$response"
