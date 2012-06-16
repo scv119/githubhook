@@ -15,7 +15,10 @@ url="http://shenchen.me:8999/fetch?url="${JOBS[$uidx]}
 echo $url
 response=$(curl $url) >> /dev/null
 if [ "${pre_resp[$pidx]}" != "$response" ]; then
+echo "========"
+echo "github changed, begin to build"
 echo ${JOBS[$counter]}  "changed:${pre_resp[$pidx]}" "$response"
+echo "========"
 curl $BUILD_URL${JOBS[$counter]}"/build"
 pre_resp[$pidx]=$response
 fi
