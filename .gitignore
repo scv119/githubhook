@@ -1,0 +1,10 @@
+bin/
+build/
+develop-eggs/
+eggs/
+parts/
+zhihu.githubhook.egg-info/
+*.swp
+.installed.cfg
+*.pyc
+*.DS_Store
